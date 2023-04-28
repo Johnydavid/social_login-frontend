@@ -1,23 +1,14 @@
-import React from 'react'
-import {posts} from "../data";
-import Card from '../components/Card';
-import Navbar from '../components/Navbar';
+import Card from "../components/Card"
+import {posts} from "../data"
 
 const Home = () => {
-  return (
-    <div className={"home"}>
-        <Navbar />
-        {posts.map(post=>(
-
-<Card />
-        ))}
-           
-
-        
-    
-        
+    return (
+        <div className="home">
+            {posts.map(post=>(
+                <Card key={post.id} post={post}/>
+            ))}
         </div>
-  )
+    )
 }
 
 export default Home
