@@ -2,11 +2,52 @@ import React from 'react'
 import Google from "../images/google.png";
 import Facebook from "../images/facebook.png";
 import Github from "../images/github.png";
-import './login.css';
+import { Link, useNavigate } from "react-router-dom";
+// import styles from "./login.module.css";
+import { useState } from "react";
+import axios from "axios";
+// import "../App.css";
 
 
 
-const Login = () => {
+
+  const Login = () => {
+    const [data, setData] = useState({
+      email: "",
+      password: "",
+    });
+  
+    const navigate = useNavigate();
+  
+    const [err, setErr] = useState("");
+  
+    const handleChange = ({ target: ip }) => {
+      setData({ ...data, [ip.name]: ip.value });
+    };
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        // const url = "http://localhost:8080/api/auth";
+        const url ="https://stack-overflow-61cl.onrender.com/api/auth";
+  
+        const { data: res } = await axios.post(url, data);
+        console.log(res);
+        localStorage.setItem("token", res.data);
+        localStorage.setItem("name", res.data1);
+        navigate("/question");
+      } catch (error) {
+        if (
+          error.response &&
+          error.response.status >= 400 &&
+          error.response.status <= 500
+        ) {
+          setErr(error.response.data.message);
+        }
+        console.log(error);
+      }
+    };
+  
 
   const google=()=>{
     window.open("http://localhost:8080/auth/google", "_self")
@@ -45,10 +86,46 @@ const Login = () => {
         <div className="or">OR</div>
       </div>
       <div className="right">
+      <form  onSubmit={handleSubmit}>
+              <h1>Login Page</h1>
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                onChange={handleChange}
+                value={data.email}
+                required
+                // className={styles.input}
+              ></input>
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={handleChange}
+                autoComplete="on"
+                value={data.password}
+                required
+                // className={styles.input}
+              ></input>
+              {err && <div >{err}</div>}
+              <button type="submit" className="submit">
+                Sign In
+              </button>
+            </form>
+          </div>
+          <div >
+            <h1>No Account?</h1>
+            <Link to="/signup">
+              <button type="button" className="submit">
+                Sign Up
+              </button>
+            </Link>
+          </div>
+      {/* <div className="right">
         <input type="text" placeholder="Username" />
         <input type="text" placeholder="Password" />
         <button className="submit">Login</button>
-      </div>
+      </div> */}
     </div>
   </div>
   </div>

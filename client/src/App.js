@@ -4,8 +4,10 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Post from "./pages/Post";
-import { useEffect, useState } from "react";
+import About from "./pages/About";
+import Signup from "./pages/Signup";
 
+import { useEffect, useState } from "react";
 
 function App() {
   // const user = false;
@@ -41,6 +43,8 @@ function App() {
         <Navbar user={user} />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/about" element={<About />} />
           <Route
             path="/login"
             element={user ? <Navigate to="/" /> : <Login />}
