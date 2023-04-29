@@ -39,9 +39,7 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      
-
+    <div>    
       <div >
         <div >
           <div >
@@ -69,7 +67,7 @@ const Signup = () => {
               <input
                 type="email"
                 placeholder="Email"
-                name="Email"
+                name="email"
                 onChange={handleChange}
                 value={input.email}
                 required
@@ -78,7 +76,7 @@ const Signup = () => {
               <input
                 type="password"
                 placeholder="Password"
-                name="Password"
+                name="password"
                 autoComplete="on"
                 onChange={handleChange}
                 value={input.password}
