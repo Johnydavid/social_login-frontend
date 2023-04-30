@@ -39,20 +39,15 @@ const Signup = () => {
   };
 
   return (
-    <div>    
-      <div >
-        <div >
-          <div >
-            <h4>Welcome to </h4>
-            <h2> GUVI</h2>
-            <Link to="/login">
-              <button type="button" >
-                Sign in
-              </button>
-            </Link>
-          </div>
-          <div >
-            <form  onSubmit={handleSubmit}>
+    <div>        
+      
+          <div className={"signup"}>
+        
+        <h1 className="signupTitle">Welcome to GUVI</h1>
+        <div className={"wrapper"}>   
+        <div className={"right"}>           
+                       
+            <form  onSubmit={handleSubmit} className={"signupForm"}>
               <h1>Create Account</h1>
               <input
                 type="text"
@@ -61,7 +56,7 @@ const Signup = () => {
                 onChange={handleChange}
                 value={input.userName}
                 required
-                // className={styles.input}
+                className={"input"}
               ></input>
 
               <input
@@ -71,7 +66,7 @@ const Signup = () => {
                 onChange={handleChange}
                 value={input.email}
                 required
-                // className={styles.input}
+                className={"input"}
               ></input>
               <input
                 type="password"
@@ -81,17 +76,18 @@ const Signup = () => {
                 onChange={handleChange}
                 value={input.password}
                 required
-                // className={styles.input}
+                className={"input"}
               ></input>
               {err && <div >{err}</div>}
-              <button type="submit" >
+              <button type="submit" className={"submit"}>
                 Sign Up
               </button>
             </form>
           </div>
         </div>
       </div>
-    </div>
+      </div>
+
   );
 };
 

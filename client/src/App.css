@@ -1,3 +1,31 @@
+.navbar {
+  height: 50px;
+  background-color: rgba(102, 16, 83, 0.698);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.listItem {
+  margin-right: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+
 .home {
   display: flex;
   padding: 50px 100px;
@@ -82,6 +110,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.signup{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
 .wrapper {
   width: 60%;
   height: 75%;
@@ -91,6 +127,13 @@
   display: flex;
   align-items: center;
   border-radius: 20px;
+}
+
+.signupForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 
@@ -170,6 +213,8 @@ input{
   padding: 15px 20px;
   margin-bottom: 20px;
   border-radius: 10px;
+  margin:10px;
+  
 }
 
 .submit{
@@ -183,6 +228,12 @@ input{
 }
 
 .loginTitle{
+  position: absolute;
+  top: 50px;
+  color:lightgray
+}
+
+.signupTitle{
   position: absolute;
   top: 50px;
   color:lightgray

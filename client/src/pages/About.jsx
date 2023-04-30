@@ -1,7 +1,11 @@
 import React from 'react'
+import Logout from './Logout'
 
 const About = () => {
   return (
+    <div>
+
+    <Logout />
     <div className={"container"}>
 
 <h1>Reputed Edtech platform </h1>
@@ -15,6 +19,7 @@ GUVI is an IIT-M & IIM-A incubated Ed-tech company that focuses on providing per
 </div>
 
 </div>
+    </div>
     </div>
   )
 }

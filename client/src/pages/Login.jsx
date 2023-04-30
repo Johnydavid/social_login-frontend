@@ -2,12 +2,12 @@ import React from 'react'
 import Google from "../images/google.png";
 import Facebook from "../images/facebook.png";
 import Github from "../images/github.png";
-import { Link, useNavigate } from "react-router-dom";
+
+import { Link, useNavigate} from "react-router-dom";
 // import styles from "./login.module.css";
 import { useState } from "react";
 import axios from "axios";
 // import "../App.css";
-
 
 
 
@@ -28,14 +28,22 @@ import axios from "axios";
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        // const url = "http://localhost:8080/api/auth";
-        const url ="https://stack-overflow-61cl.onrender.com/api/auth";
+
+        
+        const url = "http://localhost:8080/api/auth";
+        // const url ="https://stack-overflow-61cl.onrender.com/api/auth";
   
         const { data: res } = await axios.post(url, data);
         console.log(res);
         localStorage.setItem("token", res.data);
         localStorage.setItem("name", res.data1);
-        navigate("/question");
+      
+          if (localStorage.key) {
+            navigate("/about");
+          } else {
+            navigate("/");
+          }
+     
       } catch (error) {
         if (
           error.response &&
@@ -87,7 +95,7 @@ import axios from "axios";
       </div>
       <div className="right">
       <form  onSubmit={handleSubmit}>
-              <h1>Login Page</h1>
+             
               <input
                 type="email"
                 placeholder="Email"
@@ -95,7 +103,7 @@ import axios from "axios";
                 onChange={handleChange}
                 value={data.email}
                 required
-                // className={styles.input}
+                className={"input"}
               ></input>
               <input
                 type="password"
@@ -105,7 +113,7 @@ import axios from "axios";
                 autoComplete="on"
                 value={data.password}
                 required
-                // className={styles.input}
+                className={"input"}
               ></input>
               {err && <div >{err}</div>}
               <button type="submit" className="submit">
@@ -114,18 +122,14 @@ import axios from "axios";
             </form>
           </div>
           <div >
-            <h1>No Account?</h1>
+            <h3>No Account?</h3>
             <Link to="/signup">
               <button type="button" className="submit">
                 Sign Up
               </button>
             </Link>
           </div>
-      {/* <div className="right">
-        <input type="text" placeholder="Username" />
-        <input type="text" placeholder="Password" />
-        <button className="submit">Login</button>
-      </div> */}
+    
     </div>
   </div>
   </div>
