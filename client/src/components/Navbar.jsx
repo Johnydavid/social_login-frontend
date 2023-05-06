@@ -16,7 +16,7 @@ const Navbar = ({ user }) => {
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBvdCee-2wdficftVk8cVt88Et430j7BsOGSWPSL3Q&s.png"
               alt="GUVI"
               width="100"
-              height="30"
+              height="50"
             ></img>
           </Link>
           <button
