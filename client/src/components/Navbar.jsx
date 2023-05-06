@@ -12,7 +12,6 @@ const Navbar = ({ user }) => {
         <div className={"container-fluid"}>
           <Link to="/">
             <img
-              // src="https://www.guvi.in/build/images/guvi-logo.e8ad68fbd8dc0a5fc2f7c4ffd580c54d.png"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBvdCee-2wdficftVk8cVt88Et430j7BsOGSWPSL3Q&s.png"
               alt="GUVI"
               width="125"
