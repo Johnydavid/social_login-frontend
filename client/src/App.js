@@ -13,8 +13,8 @@ const App = () => {
 
   useEffect(() => {
     const getUser = () => {
-      fetch("https://social-media-login.onrender.com/auth/login/success",{
-      // fetch("http://localhost:8080/auth/login/success", {
+      // fetch("http://social-media-login.onrender.com/auth/login/success",{
+      fetch("http://localhost:8080/auth/login/success", {
         method: "GET",
         credentials: "include",
         headers: {
