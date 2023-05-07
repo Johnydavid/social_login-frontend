@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ user }) => {
   const logout = () => {
-    window.open("http://localhost:8080/auth/logout", "_self");
-    // window.open("http://social-media-login.onrender.com/auth/logout", "self");
+    // window.open("http://localhost:8080/auth/logout", "_self");
+    window.open("http://social-media-login.onrender.com/auth/logout", "self");
   };
   return (
     <div>
@@ -33,7 +33,7 @@ const Navbar = ({ user }) => {
             className={"collapse navbar-collapse"}
             id="navbarSupportedContent"
           >
-            {user ? (
+            {/* {user ? ( */}
               <ul className={"navbar-nav me-auto mb-2 mb-lg-0"}>
                 <li className={"nav-item"}>
                   <Link
@@ -67,7 +67,7 @@ const Navbar = ({ user }) => {
                   </Link>
                 </li>
               </ul>
-            ) : (
+            {/* ) : ( */}
               <ul className={"navbar-nav me-0 mb-2 mb-lg-0 "}>
                 <li>
                   <Link
