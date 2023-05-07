@@ -13,8 +13,8 @@ const App = () => {
 
   useEffect(() => {
     const getUser = () => {
-      // fetch("http://social-media-login.onrender.com/auth/login/success",{
-      fetch("http://localhost:8080/auth/login/success", {
+      fetch("https://social-media-login.onrender.com/auth/login/success",{
+      // fetch("http://localhost:8080/auth/login/success", {
   
         method: "GET",
         credentials: "include",
@@ -30,6 +30,7 @@ const App = () => {
         })
         .then((resObject) => {
           setUser(resObject.user);
+          localStorage.setItem(resObject.user);
         })
         .catch((err) => {
           console.log(err);
