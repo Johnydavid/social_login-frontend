@@ -14,7 +14,7 @@ const Login = () => {
   const github = () => {
     // window.open("http://localhost:8080/auth/github", "_self");
     window.open("https://social-media-login.onrender.com/auth/github", "_self");
-  localStorage.setItem("name")
+
   };
 
 
