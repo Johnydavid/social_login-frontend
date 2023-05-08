@@ -18,11 +18,12 @@ const App = () => {
       fetch("http://localhost:8080/auth/login/success", {
   
         method: "GET",
-        credentials: "include",
+        // credentials: "include",
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
           "Access-Control-Allow-Credentials": true,
+       "Access-Control-Allow-Origin" : "*",
         },
       })
         .then((response) => {
@@ -31,13 +32,14 @@ const App = () => {
         })
         .then((resObject) => {
           setUser(resObject.user);
-          localStorage.setItem(resObject.user);
+       
         })
         .catch((err) => {
           console.log(err);
         });
     };
     getUser();
+    
   }, []);
 
   return (
