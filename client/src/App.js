@@ -55,8 +55,8 @@ const App = () => {
       .get(url)
       .then((res) => {
         console.log(res);
-        setUser(res.user.displayName);
-        console.log(res.user)
+        setUser(res.data.displayName);
+        console.log(res.data)
       })
       .catch((err) => {
         console.log(err);
