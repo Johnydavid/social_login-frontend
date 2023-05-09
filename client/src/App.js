@@ -45,7 +45,7 @@ const App = () => {
 
 
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     
@@ -55,9 +55,9 @@ const App = () => {
       .get(url)
       .then((res) => {
         console.log(res);
-        setUser(res.data[0].displayName
+        setUser(res.data[0]
           );
-        console.log(res.data[0].displayName
+        console.log(res.data[0]
           )
       })
       .catch((err) => {
