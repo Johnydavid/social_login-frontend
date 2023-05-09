@@ -56,7 +56,7 @@ const App = () => {
       .then((res) => {
         console.log(res);
         setUser(res.data.displayName);
-        console.log(res.data)
+        console.log(res.data.displayName)
       })
       .catch((err) => {
         console.log(err);
