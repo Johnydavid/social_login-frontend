@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ user }) => {
+  console.log(user)
   const logout = () => {
     window.open("http://localhost:8080/auth/logout", "_self");
     // window.open("https://social-media-login.onrender.com/auth/logout", "self");
