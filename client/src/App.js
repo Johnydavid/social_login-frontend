@@ -64,7 +64,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div>
-        <Navbar user={user} />
+        <Navbar user={data} />
 
         <Routes>
           <Route path="/about" element={<About />}></Route>
