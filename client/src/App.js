@@ -48,7 +48,7 @@ const App = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // const url = "http://localhost:8080/api/question/read";
+    
     const url ="http://localhost:8080/auth/login/success";
     axios
       .get(url)
