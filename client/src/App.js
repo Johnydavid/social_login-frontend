@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import About from "./pages/About";
 import Post from "./pages/Post";
+import axios from "axios";
 
 import { useState, useEffect } from "react";
 
