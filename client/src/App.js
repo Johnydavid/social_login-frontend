@@ -1,6 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route  } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import About from "./pages/About";
@@ -10,7 +10,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 const App = () => {
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
 
   // useEffect(() => {
   //   const getUser = () => {
@@ -41,20 +41,22 @@ const App = () => {
   //   };
   //   getUser();
     
-  // }, []);
+  // // }, []);
 
 
 
-  const [data, setData] = useState([]);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     
-    const url ="http://localhost:8080/auth/login/success";
+    // const url ="http://localhost:8080/auth/login/success";
+    const url = "http://localhost:8080/auth/github/read";
     axios
       .get(url)
       .then((res) => {
         console.log(res);
-        setData(res.user);
+        setUser(res.user.displayName);
+        console.log(res.user)
       })
       .catch((err) => {
         console.log(err);
@@ -64,20 +66,20 @@ const App = () => {
   return (
     <BrowserRouter>
       <div>
-        <Navbar user={data} />
+        <Navbar user={user} />
 
         <Routes>
           <Route path="/about" element={<About />}></Route>
 
           <Route path="/" element={<Home />} />
-          <Route path="/" element={<Home />} />
+   
           <Route
             path="/login"
-            element={user ? <Navigate to="/" /> : <Login />}
+            element={  <Login />}
           />
           <Route
             path="/post/:id"
-            element={user ? <Post /> : <Navigate to="/login" />}
+            element= {<Post /> }
           />
         </Routes>
       </div>
