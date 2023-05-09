@@ -14,15 +14,15 @@ const App = () => {
   useEffect(() => {
     const getUser = () => {
       // fetch("https://guvi-socialmedia.netlify.app/auth/login/success",{
-      // fetch("https://social-media-login.onrender.com/auth/login/success",{
-      fetch("http://localhost:8080/auth/login/success", {
+      fetch("https://social-media-login.onrender.com/auth/login/success",{
+      // fetch("http://localhost:8080/auth/login/success", {
   
         method: "GET",
         // credentials: "include",
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
-          // "Access-Control-Allow-Credentials": true,
+          "Access-Control-Allow-Credentials": true,
        "Access-Control-Allow-Origin" : "*",
         },
       })
