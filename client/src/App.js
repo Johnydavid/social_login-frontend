@@ -11,35 +11,53 @@ import { useState, useEffect } from "react";
 const App = () => {
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const getUser = () => {
-      // fetch("https://guvi-socialmedia.netlify.app/auth/login/success",{
-      // fetch("https://social-media-login.onrender.com/auth/login/success",{
-      fetch("http://localhost:8080/auth/login/success", {
+  // useEffect(() => {
+  //   const getUser = () => {
+  //     // fetch("https://guvi-socialmedia.netlify.app/auth/login/success",{
+  //     // fetch("https://social-media-login.onrender.com/auth/login/success",{
+  //     fetch("http://localhost:8080/auth/login/success", {
   
-        method: "GET",
-        credentials: "include",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-       "Access-Control-Allow-Origin" : "*",
-        },
-      })
-        .then((response) => {
-          if (response.status === 200) return response.json();
-          throw new Error("authentication has been failed!");
-        })
-        .then((resObject) => {
-          setUser(resObject.user);
+  //       method: "GET",
+  //       credentials: "include",
+  //       headers: {
+  //         Accept: "application/json",
+  //         "Content-Type": "application/json",
+  //         "Access-Control-Allow-Credentials": true,
+  //      "Access-Control-Allow-Origin" : "*",
+  //       },
+  //     })
+  //       .then((response) => {
+  //         if (response.status === 200) return response.json();
+  //         throw new Error("authentication has been failed!");
+  //       })
+  //       .then((resObject) => {
+  //         setUser(resObject.user);
        
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-    getUser();
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   };
+  //   getUser();
     
+  // }, []);
+
+
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    // const url = "http://localhost:8080/api/question/read";
+    const url ="http://localhost:8080/auth/login/success";
+    axios
+      .get(url)
+      .then((res) => {
+        console.log(res);
+        setData(res.user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   return (
@@ -50,6 +68,7 @@ const App = () => {
         <Routes>
           <Route path="/about" element={<About />}></Route>
 
+          <Route path="/" element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route
             path="/login"
