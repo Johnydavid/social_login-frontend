@@ -2,12 +2,14 @@ import React from "react";
 import Google from "../images/google.png";
 import Facebook from "../images/facebook.png";
 import Github from "../images/github.png";
+import { Navigate } from "react-router-dom";
 
 const Login = () => {
   const google = () => {
     // window.open("http://localhost:8080/auth/google", "_self");
     window.open("http://social-media-login.onrender.com/auth/google", "_self");
-   
+    
+   Navigate("/about")
     
   };
 
