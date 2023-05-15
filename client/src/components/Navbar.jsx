@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const Navbar = ({ user }) => {
  
   
-  const logout = () => {
-    // window.open("http://localhost:8080/auth/logout", "_self");
-    window.open("http://social-media-login.onrender.com/auth/logout", "self");
-  };
+  // const logout = () => {
+  //   // window.open("http://localhost:8080/auth/logout", "_self");
+  //   window.open("http://social-media-login.onrender.com/auth/logout", "self");
+  // };
   return (
     <div>
       <nav className={"navbar navbar-expand-lg bg-body-tertiary"}>
@@ -37,7 +37,7 @@ const Navbar = ({ user }) => {
           >
             
               <ul className={"navbar-nav me-auto mb-2 mb-lg-0"}>
-                <li className={"nav-item"}>
+                {/* <li className={"nav-item"}>
                   <Link
                     to="/about"
                     className={"nav-link active"}
@@ -45,7 +45,7 @@ const Navbar = ({ user }) => {
                   >
                     <button className={"btn btn-light me-3"}> About</button>
                   </Link>
-                </li>
+                </li> */}
                 {/* <div className="nav">
                   <li className="listItem ">
                     <img
