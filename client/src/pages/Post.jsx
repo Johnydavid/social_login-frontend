@@ -1,5 +1,6 @@
 import { useLocation } from "react-router";
 import { posts } from "../data";
+import LogoutBar from "../components/LogoutBar";
 
 const Post = () => {
   const location = useLocation();
@@ -10,6 +11,7 @@ const Post = () => {
   console.log(location);
   return (
     <div>
+   <LogoutBar />
       <div className="post">
         <img src={post.img} alt="" className="postImg" />
         <h1 className="postTitle">{post.title}</h1>

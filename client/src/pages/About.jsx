@@ -1,8 +1,10 @@
 import React from "react";
+import LogoutBar from "../components/LogoutBar";
 
 const About = () => {
   return (
     <div>
+      <LogoutBar />
       <div className={"container mt-5"}>
         <h1>Reputed Edtech platform </h1>
         <h2>for Vernacular Languages</h2>
