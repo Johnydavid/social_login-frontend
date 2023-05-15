@@ -70,7 +70,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div>
-        <Navbar  />
+   
 
         <Routes>
           <Route path="/about" element={<About />}></Route>
