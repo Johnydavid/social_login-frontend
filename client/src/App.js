@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import About from "./pages/About";
 import Post from "./pages/Post";
 import axios from "axios";
+import Navbar from "./components/Navbar";
 
 import { useState, useEffect } from "react";
 
@@ -68,26 +69,29 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <div>
+    <>
+    <Navbar />
+    </>
+    // <BrowserRouter>
+    //   <div>
    
 
-        <Routes>
-          <Route path="/about" element={<About />}></Route>
+    //     <Routes>
+    //       <Route path="/about" element={<About />}></Route>
 
-          <Route path="/" element={<Home />} />
+    //       <Route path="/" element={<Home />} />
    
-          <Route
-            path="/login"
-            element={ <Login />  }
-          />
-          <Route
-            path="/post/:id"
-            element= {<Post /> }
-          />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    //       <Route
+    //         path="/login"
+    //         element={ <Login />  }
+    //       />
+    //       <Route
+    //         path="/post/:id"
+    //         element= {<Post /> }
+    //       />
+    //     </Routes>
+    //   </div>
+    // </BrowserRouter>
   );
 };
 

@@ -6,7 +6,7 @@ const LogoutBar = ({ user }) => {
   
   const logout = () => {
     // window.open("http://localhost:8080/auth/logout", "_self");
-    window.open("http://social-media-login.onrender.com/auth/logout", "self");
+    window.open("https://social-media-login.onrender.com/auth/logout", "self");
   };
   return (
     <div>
