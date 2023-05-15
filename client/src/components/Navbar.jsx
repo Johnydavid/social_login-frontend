@@ -57,7 +57,7 @@ const Navbar = ({ user }) => {
                   <li className="listItem mt-3">{user.displayName}</li>
                 </div> */}
 
-                <li>
+                {/* <li>
                   <Link
                     to="/"
                     className={"nav-link active ms-auto"}
@@ -67,7 +67,7 @@ const Navbar = ({ user }) => {
                       Log Out
                     </button>
                   </Link>
-                </li>
+                </li> */}
               </ul>
        
               <ul className={"navbar-nav me-0 mb-2 mb-lg-0 "}>
