@@ -6,12 +6,12 @@ import Login from "./pages/Login";
 import About from "./pages/About";
 import Post from "./pages/Post";
 import axios from "axios";
-import Navbar from "./components/Navbar";
+
 
 import { useState, useEffect } from "react";
 
 const App = () => {
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
 
   // useEffect(() => {
   //   const getUser = () => {
@@ -46,11 +46,11 @@ const App = () => {
 
 
 
-  // const [user, setUser] = useState();
+  const [user, setUser] = useState();
 
   useEffect(() => {
     
-    const url ="https://social-media-login.onrender.com/auth/login/success";
+    const url ="https://guvi-socialmedia.netlify.app/auth/login/success";
     // const url = "http://localhost:8080/auth/github/read";
     axios
       .get(url)
@@ -69,29 +69,26 @@ const App = () => {
   }, []);
 
   return (
-    <>
-    <Navbar />
-    </>
-    // <BrowserRouter>
-    //   <div>
-   
 
-    //     <Routes>
-    //       <Route path="/about" element={<About />}></Route>
+    <BrowserRouter>
+      <div>   
 
-    //       <Route path="/" element={<Home />} />
+        <Routes>
+          <Route path="/about" element={<About />}></Route>
+
+          <Route path="/" element={<Home />} /> 
    
-    //       <Route
-    //         path="/login"
-    //         element={ <Login />  }
-    //       />
-    //       <Route
-    //         path="/post/:id"
-    //         element= {<Post /> }
-    //       />
-    //     </Routes>
-    //   </div>
-    // </BrowserRouter>
+          <Route
+            path="/login"
+            element={ <Login />  }
+          />
+          <Route
+            path="/post/:id"
+            element= {<Post /> }
+          /> 
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 };
 
