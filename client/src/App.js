@@ -46,7 +46,7 @@ const App = () => {
 
 
 
-  const [user, setUser] = useState();
+  const [user, setUser] = useState([]);
 
   useEffect(() => {
     
