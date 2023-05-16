@@ -1,5 +1,5 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import { BrowserRouter, Routes, Route  } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -50,7 +50,7 @@ const App = () => {
 
   useEffect(() => {
     
-    const url ="https://guvi-socialmedia.netlify.app/auth/login/success";
+    const url ="https://social-media-login.onrender.com/auth/login/success";
     // const url = "http://localhost:8080/auth/github/read";
     axios
       .get(url)
@@ -74,6 +74,7 @@ const App = () => {
       <div>   
 
         <Routes>
+          {user}
           <Route path="/about" element={<About />}></Route>
 
           <Route path="/" element={<Home />} /> 
