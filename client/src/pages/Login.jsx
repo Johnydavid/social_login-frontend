@@ -2,10 +2,10 @@ import React from "react";
 import Google from "../images/google.png";
 import Facebook from "../images/facebook.png";
 import Github from "../images/github.png";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const google = () => {
     // window.open("http://localhost:8080/auth/google", "_self");
     window.open("https://social-media-login.onrender.com/auth/google", "_self");
