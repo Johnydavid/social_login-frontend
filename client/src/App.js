@@ -46,27 +46,27 @@ const App = () => {
 
 
 
-  const [user, setUser] = useState([]);
+  // const [user, setUser] = useState(null);
 
-  useEffect(() => {
+  // useEffect(() => {
     
-    const url ="https://social-media-login.onrender.com/auth/github/read";
-    // const url = "http://localhost:8080/auth/github/read";
-    axios
-      .get(url)
-      .then((res) => {
-        console.log(res);
-        setUser(res.data[0]
-          );
-        console.log(res.data[0]
+  //   const url ="https://social-media-login.onrender.com/auth/github/read";
+  //   // const url = "http://localhost:8080/auth/github/read";
+  //   axios
+  //     .get(url)
+  //     .then((res) => {
+  //       console.log(res);
+  //       setUser(res.data[0]
+  //         );
+  //       console.log(res.data[0]
           
-          )
+  //         )
         
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   return (
 
