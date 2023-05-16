@@ -89,4 +89,4 @@ const LogoutBar = ({ user }) => {
   );
 };
 
-export default Navbar;
+export default LogoutBar;

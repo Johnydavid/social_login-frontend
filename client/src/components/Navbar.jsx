@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ user }) => {
- 
-  
+const Navbar = () => {
   // const logout = () => {
   //   // window.open("http://localhost:8080/auth/logout", "_self");
   //   window.open("http://social-media-login.onrender.com/auth/logout", "self");
@@ -35,9 +33,8 @@ const Navbar = ({ user }) => {
             className={"collapse navbar-collapse"}
             id="navbarSupportedContent"
           >
-            
-              <ul className={"navbar-nav me-auto mb-2 mb-lg-0"}>
-                {/* <li className={"nav-item"}>
+            {/* <ul className={"navbar-nav me-auto mb-2 mb-lg-0"}> */}
+            {/* <li className={"nav-item"}>
                   <Link
                     to="/about"
                     className={"nav-link active"}
@@ -46,7 +43,7 @@ const Navbar = ({ user }) => {
                     <button className={"btn btn-light me-3"}> About</button>
                   </Link>
                 </li> */}
-                {/* <div className="nav">
+            {/* <div className="nav">
                   <li className="listItem ">
                     <img
                       src={user.photos[0].value}
@@ -57,7 +54,7 @@ const Navbar = ({ user }) => {
                   <li className="listItem mt-3">{user.displayName}</li>
                 </div> */}
 
-                {/* <li>
+            {/* <li>
                   <Link
                     to="/"
                     className={"nav-link active ms-auto"}
@@ -68,20 +65,19 @@ const Navbar = ({ user }) => {
                     </button>
                   </Link>
                 </li> */}
-              </ul>
-       
-              <ul className={"navbar-nav me-0 mb-2 mb-lg-0 "}>
-                <li>
-                  <Link
-                    to="/login"
-                    className={"nav-link active ms-auto"}
-                    aria-current="page"
-                  >
-                    <button className={"btn btn-light "}>Log In</button>
-                  </Link>
-                </li>
-              </ul>
- 
+            {/* </ul> */}
+
+            <ul className={"navbar-nav me-0 mb-2 mb-lg-0 "}>
+              <li>
+                <Link
+                  to="/login"
+                  className={"nav-link active ms-auto"}
+                  aria-current="page"
+                >
+                  <button className={"btn btn-light "}>Log In</button>
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
