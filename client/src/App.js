@@ -38,10 +38,9 @@ const App = () => {
 
   useEffect(() => {
     
-    const url = https://social-media-login.onrender.com/auth/login/success;
+    const url = "https://social-media-login.onrender.com/auth/login/success"
     // const url = "http://localhost:8080/auth/github/read";
-    axios
-      .get(url)
+    axios.get(url)
       .then((res) => {
         console.log(res);
         setUser(res.data[0]
