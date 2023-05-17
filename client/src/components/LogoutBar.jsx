@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const LogoutBar = ({ user }) => {
+const LogoutBar = ({ userDetails }) => {
  
+  const user= userDetails.user;
   
   const logout = () => {
     // window.open("http://localhost:8080/auth/logout", "_self");
