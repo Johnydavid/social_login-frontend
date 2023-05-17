@@ -19,8 +19,9 @@ const App = () => {
 
 	const getUser = async () => {
 		try {
+      const got = require("got");
 			const url = "https://social-media-login.onrender.com/auth/login/success"
-			const { data } = await axios.get(url, { withCredentials: true });
+			const { data } = await got.get(url, { withCredentials: true });
 			setUser(data.user._json);
 		} catch (err) {
 			console.log(err);
