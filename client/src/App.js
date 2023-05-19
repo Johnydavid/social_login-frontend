@@ -38,14 +38,14 @@ const App = () => {
 
   useEffect(() => {
     
-    // const url = "https://social-media-login.onrender.com/auth/login/success"
-    const url = "https://social-media-login.onrender.com/auth/github/read";
+    const url = "https://social-media-login.onrender.com/auth/login/success"
+    // const url = "https://social-media-login.onrender.com/auth/github/read";
     axios.get(url)
       .then((res) => {
         console.log(res);
-        setUser(res.displayName
+        setUser(res.user.displayName
           );
-        console.log(res.data[0].displayName
+        console.log(res.user.displayName
           
           )
         
