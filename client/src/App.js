@@ -38,7 +38,7 @@ const App = () => {
 
   useEffect(() => {
     
-    const url = "https://social-media-login.onrender.com/auth/login/success"
+    const url = "https://guvi-socialmedia.netlify.app/auth/login/success"
     // const url = "https://social-media-login.onrender.com/auth/github/read";
     axios.get(url)
       .then((res) => {
