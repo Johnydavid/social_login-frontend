@@ -34,26 +34,26 @@ const App = () => {
 
 
 
-  // const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
 
-  // useEffect(() => {
+  useEffect(() => {
     
     // const url = "https://social-media-login.onrender.com/auth/login/success"
-  //   const url = "http://localhost:8080/auth/github/read";
-  //   axios.get(url)
-  //     .then((res) => {
-  //       console.log(res);
-  //       setUser(res.displayName
-  //         );
-  //       console.log(res.displayName
+    const url = "http://localhost:8080/auth/github/read";
+    axios.get(url)
+      .then((res) => {
+        console.log(res);
+        setUser(res.displayName
+          );
+        console.log(res.displayName
           
-  //         )
+          )
         
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   
 
   return (
@@ -62,19 +62,19 @@ const App = () => {
       <div>   
 
         <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-{/*     
+        {/* <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} /> */}
+     
         <Route
 					exact
 					path="/"
 					element={user ? <Home user={user} /> : <Navigate to="/login" />}
-				/>
+				/> 
 				<Route
 					exact
 					path="/login"
 					element={user ? <Navigate to="/" /> : <Login />}
-				/> */}
+				/> 
         </Routes>
       </div>
     </BrowserRouter>
