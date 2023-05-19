@@ -3,8 +3,8 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate  } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import About from "./pages/About";
-import Post from "./pages/Post";
+// import About from "./pages/About";
+// import Post from "./pages/Post";
 import axios from "axios";
 
 
@@ -38,8 +38,8 @@ const App = () => {
 
   useEffect(() => {
     
-    const url = "https://social-media-login.onrender.com/auth/login/success"
-    // const url = "http://localhost:8080/auth/github/read";
+    // const url = "https://social-media-login.onrender.com/auth/login/success"
+    const url = "http://localhost:8080/auth/github/read";
     axios.get(url)
       .then((res) => {
         console.log(res);
