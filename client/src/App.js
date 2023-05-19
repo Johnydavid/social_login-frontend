@@ -39,7 +39,7 @@ const App = () => {
   useEffect(() => {
     
     // const url = "https://social-media-login.onrender.com/auth/login/success"
-    const url = "http://localhost:8080/auth/github/read";
+    const url = "https://social-media-login.onrender.com/auth/github/read";
     axios.get(url)
       .then((res) => {
         console.log(res);
