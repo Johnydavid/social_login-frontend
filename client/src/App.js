@@ -15,22 +15,22 @@ import { useState, useEffect } from "react";
 const App = () => {
 
 
-	const [user, setUser] = useState(null);
+	// const [user, setUser] = useState(null);
 
-	const getUser = async () => {
-		try {
+	// const getUser = async () => {
+	// 	try {
   
-			const url = "https://social-media-login.onrender.com/auth/login/success";
-			const { data } = await axios.get(url, { withCredentials: true });
-			setUser(data.user._json);
-		} catch (err) {
-			console.log(err);
-		}
-	};
+	// 		const url = "https://social-media-login.onrender.com/auth/login/success";
+	// 		const { data } = await axios.get(url, { withCredentials: true });
+	// 		setUser(data.user._json);
+	// 	} catch (err) {
+	// 		console.log(err);
+	// 	}
+	// };
 
-	useEffect(() => {
-		getUser();
-	}, []);
+	// useEffect(() => {
+	// 	getUser();
+	// }, []);
 
 
 
@@ -62,7 +62,8 @@ const App = () => {
       <div>   
 
         <Routes>
-    
+        <Route path="/" element={<Home />} />
+{/*     
         <Route
 					exact
 					path="/"
@@ -72,7 +73,7 @@ const App = () => {
 					exact
 					path="/login"
 					element={user ? <Navigate to="/" /> : <Login />}
-				/>
+				/> */}
         </Routes>
       </div>
     </BrowserRouter>
