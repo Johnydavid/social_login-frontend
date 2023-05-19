@@ -8,7 +8,7 @@ const Login = () => {
   // const navigate = useNavigate();
   const google = () => {
     // window.open("http://localhost:8080/auth/google", "_self");
-    window.open("https://social-media-login.onrender.com/auth/google/callback", "_self");
+    window.open("https://social-media-login.onrender.com/auth/google", "_self");
    
     
   //  navigate("/about")
