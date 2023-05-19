@@ -17,7 +17,7 @@ const App = () => {
 
 	const [user, setUser] = useState(null);
 
-	const getUser = async () => {
+	// const getUser = async () => {
 	// 	try {
   //     const got = require("got");
 	// 		const url = https://social-media-login.onrender.com/auth/login/success
