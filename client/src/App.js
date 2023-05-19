@@ -45,7 +45,7 @@ const App = () => {
         console.log(res);
         setUser(res.displayName
           );
-        console.log(res.displayName
+        console.log(res.data[0].displayName
           
           )
         
