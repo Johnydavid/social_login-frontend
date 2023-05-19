@@ -17,43 +17,43 @@ const App = () => {
 
 	const [user, setUser] = useState(null);
 
-	// const getUser = async () => {
-	// 	try {
-  //     const got = require("got");
-	// 		const url = https://social-media-login.onrender.com/auth/login/success
-	// 		const { data } = await got.get(url, { withCredentials: true });
-	// 		setUser(data.user._json);
-	// 	} catch (err) {
-	// 		console.log(err);
-	// 	}
-	// };
+	const getUser = async () => {
+		try {
+  
+			const url = "https://social-media-login.onrender.com/auth/login/success";
+			const { data } = await axios.get(url, { withCredentials: true });
+			setUser(data.user._json);
+		} catch (err) {
+			console.log(err);
+		}
+	};
 
-	// useEffect(() => {
-	// 	getUser();
-	// }, []);
+	useEffect(() => {
+		getUser();
+	}, []);
 
 
 
   // const [user, setUser] = useState(null);
 
-  useEffect(() => {
+  // useEffect(() => {
     
     // const url = "https://social-media-login.onrender.com/auth/login/success"
-    const url = "http://localhost:8080/auth/github/read";
-    axios.get(url)
-      .then((res) => {
-        console.log(res);
-        setUser(res.user
-          );
-        console.log(res.user
+  //   const url = "http://localhost:8080/auth/github/read";
+  //   axios.get(url)
+  //     .then((res) => {
+  //       console.log(res);
+  //       setUser(res.displayName
+  //         );
+  //       console.log(res.displayName
           
-          )
+  //         )
         
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
   
 
   return (
