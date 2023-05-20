@@ -15,22 +15,22 @@ import { useState, useEffect } from "react";
 const App = () => {
 
 
-	// const [user, setUser] = useState(null);
+	const [user, setUser] = useState(null);
 
-	// const getUser = async () => {
-	// 	try {
+	const getUser = async () => {
+		try {
   
-	// 		const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
-	// 		const { data } = await axios.get(url, { withCredentials: true });
-	// 		setUser(data.user._json);
-	// 	} catch (err) {
-	// 		console.log(err);
-	// 	}
-	// };
+			const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
+			const { data } = await axios.get(url, { withCredentials: true });
+			setUser(data.user._json);
+		} catch (err) {
+			console.log(err);
+		}
+	};
 
-	// useEffect(() => {
-	// 	getUser();
-	// }, []);
+	useEffect(() => {
+		getUser();
+	}, []);
 
 
 
