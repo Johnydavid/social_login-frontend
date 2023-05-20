@@ -43,9 +43,9 @@ const App = () => {
     axios.get(url)
       .then((res) => {
         console.log(res);
-        setUser(res.user.displayName
+        setUser(res.data[0].displayName
           );
-        console.log(res.user.displayName
+        console.log(res.data[0].displayName
           
           )
         
