@@ -20,8 +20,8 @@ const App = () => {
           "Accept": "application/json",
           "Content-Type": "application/json",
           "Access-Control-Allow-Credentials": true,
-          Host: 'mydomain.com',
-       Origin: 'mydomain.com'
+          Host: 'http://guvi-socialmedia.netlify.app/',
+       Origin: 'http://guvi-socialmedia.netlify.app/'
         },
       })
         .then((response) => {
