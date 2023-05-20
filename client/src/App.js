@@ -20,6 +20,8 @@ const App = () => {
           "Accept": "application/json",
           "Content-Type": "application/json",
           "Access-Control-Allow-Credentials": true,
+          Host: 'mydomain.com',
+       Origin: 'mydomain.com'
         },
       })
         .then((response) => {
