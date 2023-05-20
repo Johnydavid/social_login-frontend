@@ -13,15 +13,15 @@ const App = () => {
   const [user, setUser] = useState(null);
   useEffect(() => {
     const getUser = () => {
-      fetch("http://localhost:8080/auth/", {
+      fetch("http://localhost:8080/auth/login/success", {
         method: "GET",
         credentials: "include",
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
           "Access-Control-Allow-Credentials": true,
-          Host: 'https://guvi-socialmedia.netlify.app/',
-       Origin: 'https://guvi-socialmedia.netlify.app/'
+          "Host": 'https://guvi-socialmedia.netlify.app/',
+       "Origin": 'https://guvi-socialmedia.netlify.app/'
         },
       })
         .then((response) => {
