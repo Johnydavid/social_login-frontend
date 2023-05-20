@@ -17,43 +17,43 @@ const App = () => {
 
 	const [user, setUser] = useState(null);
 
-	const getUser = async () => {
-		try {
+	// const getUser = async () => {
+	// 	try {
   
-			const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
-			const { data } = await axios.get(url, { withCredentials: true });
-			setUser(data.user._json);
-		} catch (err) {
-			console.log(err);
-		}
-	};
+	// 		const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
+	// 		const { data } = await axios.get(url, { withCredentials: true });
+	// 		setUser(data.user._json);
+	// 	} catch (err) {
+	// 		console.log(err);
+	// 	}
+	// };
 
-	useEffect(() => {
-		getUser();
-	}, []);
+	// useEffect(() => {
+	// 	getUser();
+	// }, []);
 
 
 
-  // const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
 
-  // useEffect(() => {
+  useEffect(() => {
     
-  //   const url = "https://guvi-socialmedia.netlify.app/auth/login/success"
-  //   // const url = "https://social-media-login.onrender.com/auth/github/read";
-  //   axios.get(url)
-  //     .then((res) => {
-  //       console.log(res);
-  //       setUser(res.user.displayName
-  //         );
-  //       console.log(res.user.displayName
+    // const url = "https://guvi-socialmedia.netlify.app/auth/login/success"
+    const url = "https://social-media-login.onrender.com/auth/user/read";
+    axios.get(url)
+      .then((res) => {
+        console.log(res);
+        setUser(res.user.displayName
+          );
+        console.log(res.user.displayName
           
-  //         )
+          )
         
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   
 
   return (
