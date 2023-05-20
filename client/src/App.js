@@ -13,7 +13,7 @@ const App = () => {
   const [user, setUser] = useState(null);
   useEffect(() => {
     const getUser = () => {
-      fetch("http://localhost:8080/auth/login/success", {
+      fetch("http://localhost:8080/auth/", {
         method: "GET",
         credentials: "include",
         headers: {
