@@ -15,7 +15,7 @@ import { useState, useEffect } from "react";
 const App = () => {
 
 
-	const [user, setUser] = useState(null);
+	// const [user, setUser] = useState(null);
 
 	// const getUser = async () => {
 	// 	try {
