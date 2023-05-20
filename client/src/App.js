@@ -1,80 +1,62 @@
 import "./App.css";
-// import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar";
 import { BrowserRouter, Routes, Route, Navigate  } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-// import About from "./pages/About";
-// import Post from "./pages/Post";
-import axios from "axios";
-
-
-
+import About from "./pages/About";
+import Post from "./pages/Post";
+// import axios from "axios";
 
 import { useState, useEffect } from "react";
-
 const App = () => {
 
-
-	// const [user, setUser] = useState(null);
-
-	// const getUser = async () => {
-	// 	try {
-  
-	// 		const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
-	// 		const { data } = await axios.get(url, { withCredentials: true });
-	// 		setUser(data.user._json);
-	// 	} catch (err) {
-	// 		console.log(err);
-	// 	}
-	// };
-
-	// useEffect(() => {
-	// 	getUser();
-	// }, []);
-
-
-
   const [user, setUser] = useState(null);
-
   useEffect(() => {
-    
-    // const url = "https://guvi-socialmedia.netlify.app/auth/login/success"
-    const url = "https://social-media-login.onrender.com/auth/user/read";
-    axios.get(url)
-      .then((res) => {
-        console.log(res);
-        setUser(res.user
-          );
-        console.log(res.user
-          
-          )
-        
+    const getUser = () => {
+      fetch("http://localhost:8080/auth/login/success", {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
       })
-      .catch((err) => {
-        console.log(err);
-      });
+        .then((response) => {
+          if (response.status === 200) return response.json();
+          throw new Error("authentication has been failed!");
+        })
+        .then((resObject) => {
+          setUser(resObject.user);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    getUser();
   }, []);
-  
-
+	
   return (
-
     <BrowserRouter>
       <div>   
-
+        <Navbar user={user} />
         <Routes>
-        {/* <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} /> */}
-     
-        <Route
-					exact
-					path="/"
-					element={user ? <Home user={user} /> : <Navigate to="/login" />}
-				/> 
-				<Route
-					exact
-					path="/login"
-					element={user ? <Navigate to="/" /> : <Login />}
-				/> 
+          <Route path="/" element={<Home />} />
+          <Route path="/" element={<About />} />
+          <Route
+            path="/login"
+            element={user ? <Navigate to="/" /> : <Login />}
+          />
+            <Route
+            path="/about"
+            element={user ? <About /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/post/:id"
+            element={user ? <Post /> : <Navigate to="/login" />}
+          />
+       
+  
         </Routes>
       </div>
     </BrowserRouter>
