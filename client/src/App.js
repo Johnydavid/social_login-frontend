@@ -13,15 +13,14 @@ const App = () => {
   const [user, setUser] = useState(null);
   useEffect(() => {
     const getUser = () => {
-      fetch("https://social-media-login.onrender.com/auth/login/success", {
+      fetch("http://localhost:8080/auth/login/success", {
         method: "GET",
         credentials: "include",
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
           "Access-Control-Allow-Credentials": true,
-          "Host": 'https://guvi-socialmedia.netlify.app/',
-       "Origin": 'https://guvi-socialmedia.netlify.app/'
+  
         },
       })
         .then((response) => {
@@ -30,6 +29,7 @@ const App = () => {
         })
         .then((resObject) => {
           setUser(resObject.user);
+          console.log(resObject.user)
         })
         .catch((err) => {
           console.log(err);
@@ -44,6 +44,7 @@ const App = () => {
         <Navbar user={user} />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
        
           <Route
             path="/login"

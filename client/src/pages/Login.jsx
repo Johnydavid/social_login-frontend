@@ -2,30 +2,22 @@ import React from "react";
 import Google from "../images/google.png";
 import Facebook from "../images/facebook.png";
 import Github from "../images/github.png";
-// import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  // const navigate = useNavigate();
   const google = () => {
-    window.open("http://localhost:8080/auth/google/callback", "_self");
+    window.open("http://localhost:8080/auth/google/callack", "_self");
     // window.open(`${process.env.REACT_APP_API_URL}/auth/google/callback`, "_self");
-   
-    
-  //  navigate("/about")
-    
   };
 
   const github = () => {
     window.open("http://localhost:8080/auth/github/callback", "_self");
     // window.open(`${process.env.REACT_APP_API_URL}/auth/github/callback`, "_self");
     // navigate("/about")
-
   };
 
-
   const facebook = () => {
-    // window.open("http://localhost:8080/auth/facebook", "_self");
-    window.open("https://social-media-login.onrender.com/auth/facebook", "_self");
+    window.open("http://localhost:8080/auth/facebook", "_self");
+    // window.open("https://social-media-login.onrender.com/auth/facebook", "_self");
     // navigate("/about")
   };
   return (
@@ -38,6 +30,7 @@ const Login = () => {
               <img src={Google} alt="" className="icon" />
               Google
             </div>
+
             <div className="loginButton facebook" onClick={facebook}>
               <img src={Facebook} alt="" className="icon" />
               Facebook
