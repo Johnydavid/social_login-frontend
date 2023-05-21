@@ -20,8 +20,8 @@ const App = () => {
           "Accept": "application/json",
           "Content-Type": "application/json",
           "Access-Control-Allow-Credentials": true,
-          "Host": 'https://guvi-socialmedia.netlify.app/',
-       "Origin": 'https://guvi-socialmedia.netlify.app/'
+      //     "Host": 'https://guvi-socialmedia.netlify.app/',
+      //  "Origin": 'https://guvi-socialmedia.netlify.app/'
         },
       })
         .then((response) => {
@@ -44,7 +44,7 @@ const App = () => {
         <Navbar user={user} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/" element={<About />} />
+       
           <Route
             path="/login"
             element={user ? <Navigate to="/" /> : <Login />}
