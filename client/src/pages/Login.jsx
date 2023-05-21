@@ -7,7 +7,7 @@ import Github from "../images/github.png";
 const Login = () => {
   // const navigate = useNavigate();
   const google = () => {
-    window.open("http://localhost:8080/auth/google", "_self");
+    window.open("http://localhost:8080/auth/google/callback", "_self");
     // window.open(`${process.env.REACT_APP_API_URL}/auth/google/callback`, "_self");
    
     
@@ -16,7 +16,7 @@ const Login = () => {
   };
 
   const github = () => {
-    window.open("http://localhost:8080/auth/github", "_self");
+    window.open("http://localhost:8080/auth/github/callback", "_self");
     // window.open(`${process.env.REACT_APP_API_URL}/auth/github/callback`, "_self");
     // navigate("/about")
 
