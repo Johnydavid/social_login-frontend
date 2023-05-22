@@ -5,20 +5,20 @@ import Github from "../images/github.png";
 
 const Login = () => {
   const google = () => {
-    window.open("http://localhost:8080/auth/google/callack", "_self");
-    // window.open(`${process.env.REACT_APP_API_URL}/auth/google/callback`, "_self");
+    // window.open("http://localhost:8080/auth/google/callack", "_self");
+    window.open("https://social-media-login.onrender.com/auth/google/callback", "_self");
   };
 
   const github = () => {
-    window.open("http://localhost:8080/auth/github/callback", "_self");
-    // window.open(`${process.env.REACT_APP_API_URL}/auth/github/callback`, "_self");
-    // navigate("/about")
+    // window.open("http://localhost:8080/auth/github/callback", "_self");
+    window.open("https://social-media-login.onrender.com/auth/github/callback", "_self");
+
   };
 
   const facebook = () => {
-    window.open("http://localhost:8080/auth/facebook", "_self");
-    // window.open("https://social-media-login.onrender.com/auth/facebook", "_self");
-    // navigate("/about")
+    // window.open("http://localhost:8080/auth/facebook", "_self");
+    window.open("https://social-media-login.onrender.com/auth/facebook/callback", "_self");
+    
   };
   return (
     <div>
