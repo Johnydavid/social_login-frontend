@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import About from "./pages/About";
 import Post from "./pages/Post";
-// import axios from "axios";
+
 
 import { useState, useEffect } from "react";
 const App = () => {
@@ -13,14 +13,14 @@ const App = () => {
   const [user, setUser] = useState(null);
   useEffect(() => {
     const getUser = () => {
-      fetch("http://localhost:8080/auth/login/success", {
+      // fetch("http://localhost:8080/auth/login/success", {
+        fetch("https://social-media-login.onrender.com/auth/login/success",{
         method: "GET",
         credentials: "include",
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-  
+          "Access-Control-Allow-Credentials": true,  
         },
       })
         .then((response) => {
