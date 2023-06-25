@@ -4,10 +4,39 @@ import Facebook from "../images/facebook.png";
 import Github from "../images/github.png";
 
 const Login = () => {
-  const google = () => {
-    // window.open("http://localhost:8080/auth/google/callack", "_self");
-    window.open("https://social-media-login.onrender.com/auth/google/callback", "_self");
+
+  const google = async (e) => {
+    e.preventDefault();
+    try {
+     
+    //   const url = "http://localhost:8080/api/auth";
+    const url = "https://social-media-login.onrender.com/auth/google/callback";
+      const { data: res } = await axios.post(url, data);
+      localStorage.setItem("token", res.data);
+      localStorage.setItem("displayName", res.data1);
+      window.location = "/";
+    
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.data.message);
+      }
+    }
+ 
   };
+
+  // const google = () => {
+  //   // window.open("http://localhost:8080/auth/google/callack", "_self");
+  //   // window.open("https://social-media-login.onrender.com/auth/google/callback", "_self");
+  //   const url = "https://social-media-login.onrender.com/auth/google/callback";
+  //   const { data: res } = await axios.post(url, data);
+  //   localStorage.setItem("token", res.data);
+  //   localStorage.setItem("displayName", res.data1);
+  //   window.location = "/";
+  // };
 
   const github = () => {
     // window.open("http://localhost:8080/auth/github/callback", "_self");
